@@ -14,4 +14,4 @@ We provide retrieval-based and generation-based baseline systems.The performance
 | baseline system | F1/BLEU1/BLEU2 | DISTINCT1/DISTINCT2 |
 | ------------- | ------------ | ------------ |
 | retrieval-based | 34.73/0.291/0.156 | 0.118/0.373 |
-| generative-based | 36.53/0.300/0.168 | 0.062/0.128 |
+| generation-based | 36.53/0.300/0.168 | 0.062/0.128 |
