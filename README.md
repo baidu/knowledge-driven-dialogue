@@ -9,9 +9,8 @@ Please refer to [competition website](http://lic2019.ccf.org.cn/talk) for detail
 Given a dialogue goal g and a set of topic-related background knowledge M = f1 ,f2 ,..., fn , a participating system is expected to output an utterance "ut" for the current conversation H = u1, u2, ..., ut-1, which keeps the conversation coherent and informative under the guidance of the given goal. During the dialogue, a participating system is required to proactively lead the conversation from one topic to another. The dialog goal g is given like this: "Start->Topic_A->TOPIC_B", which means the machine should lead the conversation from any start state to topic A and then to topic B. The given background knowledge includes knowledge related to topic A and topic B, and the relations between these two topics.<br>
 Please refer to [task description](https://github.com/baidu/knowledge-driven-dialogue/blob/master/task_description.pdf) for details of the task.
 # about the baseline
-we provide two baseline implementation(retrieval-based and generative-based) here for knowledge-driven dialogue task.
-
-The performance of the two baseline models is as follows:
-baseline models					F1/BLEU1/BLEU2		DISTINCT1/DISTINCT2
-retrieval-based baseline		34.73/0.291/0.156	0.118/0.373
-generative-based baseline		36.53/0.300/0.168	0.062/0.128
+We provide retrieval-based and generation-based baseline systems.The performance of the two systems is as follows:
+|baseline system|F1/BLEU1/BLEU2|DISTINCT1/DISTINCT2|
+|-------------|------------|------------|
+|retrieval-based|34.73/0.291/0.156|0.118/0.373|
+|generative-based|36.53/0.300/0.168|0.062/0.128|
