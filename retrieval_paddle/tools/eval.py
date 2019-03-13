@@ -139,10 +139,10 @@ def calc_f1(data):
     pred_char_total = 0.0
     hit_char_total = 0.0
     for response, golden_response in data:
-        #golden_response = "".join(golden_response).decode("utf8")
-        #response = "".join(response).decode("utf8")
-        golden_response = "".join(golden_response)
-        response = "".join(response)
+        golden_response = "".join(golden_response).decode("utf8")
+        response = "".join(response).decode("utf8")
+        #golden_response = "".join(golden_response)
+        #response = "".join(response)
         for char in response:
             if char in golden_response:
                 hit_char_total += 1
