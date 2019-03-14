@@ -1,5 +1,4 @@
-# Knowledge-driven Dialogue
-
+Knowledge-driven Dialogue
 =============================
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
