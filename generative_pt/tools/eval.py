@@ -11,6 +11,7 @@ File: eval.py
  
 import sys
 import math
+from collections import Counter
 
 if len(sys.argv) < 2:
     print("Usage: " + sys.argv[0] + " eval_file")
@@ -138,9 +139,8 @@ def calc_f1(data):
         #response = "".join(response).decode("utf8")
         golden_response = "".join(golden_response)
         response = "".join(response)
-        for char in response:
-            if char in golden_response:
-                hit_char_total += 1
+        common = Counter(response) & Counter(golden_response)
+        hit_char_total += sum(common.values())
         golden_char_total += len(golden_response)
         pred_char_total += len(response)
     p = hit_char_total / pred_char_total
