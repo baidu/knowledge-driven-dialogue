@@ -8,7 +8,7 @@ This is a paddlepaddle implementation of retrieval-based model for knowledge-dri
 
 * cuda=9.0
 * cudnn=7.0
-* python>=2.7
+* python=2.7
 * numpy
 * paddlepaddle>=1.3
 
