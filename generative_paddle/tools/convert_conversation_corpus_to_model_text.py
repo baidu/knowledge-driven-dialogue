@@ -9,9 +9,14 @@
 File: convert_conversation_corpus_to_model_text.py
 """
 
+from __future__ import print_function
+
 import sys
 import json
 import collections
+
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 
 def preprocessing_for_one_conversation(text,
@@ -75,7 +80,7 @@ def convert_conversation_corpus_to_model_text(corpus_file, text_file, topic_file
             model_text, topic_dict = preprocessing_for_one_conversation(
                 line.strip(), topic_generalization=topic_generalization)
 
-            topic_dict = json.dumps(topic_dict, ensure_ascii=False)
+            topic_dict = json.dumps(topic_dict, ensure_ascii=False, encoding="utf-8")
 
             fout_text.write(model_text + "\n")
             fout_topic.write(topic_dict + "\n")

@@ -9,31 +9,36 @@
 File: conversation_strategy.py
 """
 
+from __future__ import print_function
+
 import sys
 
 sys.path.append("../")
 import network
 from tools.convert_conversation_corpus_to_model_text import preprocessing_for_one_conversation
 
+reload(sys)
+sys.setdefaultencoding('utf8')
+
+
 def load():
     """
     load model
     """
-    return network.main()
+    return network.load()
 
 
-def predict(generator, text):
+def predict(model, text):
     """
     predict
     """
     model_text, topic_dict = \
-        preprocessing_for_one_conversation(text.strip(), \
-                                           topic_generalization=True)
+        preprocessing_for_one_conversation(text.strip(), topic_generalization=True)
 
-    src, tgt, cue = model_text.split('\t')
-    cue = cue.split('\1')
+    if isinstance(model_text, unicode):
+        model_text = model_text.encode('utf-8')
 
-    response = generator.interact(src, cue)
+    response = network.predict(model, model_text)
 
     topic_list = sorted(topic_dict.items(), key=lambda item: len(item[1]), reverse=True)
     for key, value in topic_list:
